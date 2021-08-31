@@ -1,0 +1,190 @@
+@import url('https://fonts.googleapis.com/css2?family=Antonio:wght@500;600;700&family=Spartan:wght@400;500;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@media (max-width: 1080px) {
+    html {
+        font-size: 93.75%;
+    }
+}
+
+@media (max-width: 720px) {
+    html {
+        font-size: 87.5%;
+    }
+}
+
+
+:root {
+    --color-gray: #acaebd;
+    --color-primary-50: #e3e4ec;
+    --color-primary-100: #b9bcd2;
+    --color-primary-400: #434b81;
+    --color-primary-500: #252f6e;
+    --color-primary-800: #0f1850;
+    --color-primary-900: #06063b;
+
+    --mercury: #DEF4FC;
+    --venus:#F7CC7E;
+    --earth: #5B76FC;
+    --mars: #F26A45;
+    --jupiter: #ECAD79;
+    --saturn: #FCCB69;
+    --uranus: #69F0D4;
+    --neptune: #477DFA;
+}
+
+body {
+    background: url('/images/background-stars.svg') center / cover var(--color-primary-900);
+
+    color: var(--color-primary-50);
+}
+
+h1 {
+    font-size: 2rem;
+}
+
+h2 {
+    font-size: 1.5rem;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Antonio', sans-serif;
+}
+
+body, input, button, textarea {
+    font-family: 'Spartan', sans-serif;
+    color: white;
+}
+
+button {
+    background-color: transparent;
+    border: 0;
+}
+
+
+
+a.mercurioLink {
+    &::after,&::before {
+        background-color: var(--mercury);
+    }
+}
+a.venusLink {
+    &::after,&::before {
+        background-color: var(--venus);
+    }
+}
+a.terraLink {
+    &::after,&::before {
+        background-color: var(--earth);
+    }
+}
+a.marteLink {
+    &::after,&::before {
+        background-color: var(--mars);
+    }
+}
+a.jupiterLink {
+    &::after,&::before {
+        background-color: var(--jupiter);
+    }
+}
+a.saturnoLink {
+    &::after,&::before {
+        background-color: var(--saturn);
+    }
+}
+a.uranoLink {
+    &::after,&::before {
+        background-color: var(--uranus);
+    }
+}
+a.netunoLink {
+    &::after,&::before {
+        background-color: var(--neptune);
+    }
+}
+
+// btns
+.mercurio {
+    &:hover {
+        background-color: var(--mercury) ;
+        color: var(--color-primary-900);
+        border-color: var(--color-primary-900);
+    }
+}
+.venus {
+    &:hover {
+        background-color: #EDA44A !important;
+        border-color: #EDA44A !important;
+    }
+   
+} .terra {
+    &:hover {
+        background-color: var(--earth) !important;
+        border-color: var(--earth) !important;
+    }
+} .marte {
+    &:hover {
+        background-color: var(--mars) !important;
+        border-color: var(--mars) !important;
+    }
+} .jupiter {
+    &:hover {
+        background-color: var(--jupiter) !important;
+        color: var(--color-primary-900);
+        border-color: var(--jupiter) !important;
+    }
+} .saturno {
+    &:hover {
+        background-color: var(--saturn) !important;
+        color: var(--color-primary-900);
+        border-color: var(--saturn) !important;
+    }
+} .urano {
+    &:hover {
+        background-color: var(--uranus) !important;
+        color: var(--color-primary-900);
+        border-color: var(--uranus) !important;
+    }
+} .netuno {
+    &:hover {
+        background-color: var(--neptune) !important;
+        border-color: var(--neptune) !important;
+    }
+}
+
+.activeBtn.mercurio {
+        background-color: var(--mercury) ;
+        color: var(--color-primary-900);
+        border-color: var(--color-primary-900) !important;
+}
+.activeBtn.venus {
+        background-color: #EDA44A;
+        border-color: #EDA44A !important;
+} .activeBtn.terra {
+        background-color: var(--earth);
+        border-color: var(--earth) !important;
+} .activeBtn.marte {
+        background-color: var(--mars);
+        border-color: var(--mars) !important;
+} .activeBtn.jupiter {
+        background-color: var(--jupiter);
+        border-color: var(--jupiter) !important;
+        color: var(--color-primary-900);
+} .activeBtn.saturno {
+        background-color: var(--saturn);
+        border-color: var(--saturn) !important;
+        color: var(--color-primary-900);
+} .activeBtn.urano {
+        background-color: var(--uranus);
+        border-color: var(--uranus) !important;
+        color: var(--color-primary-900);
+} .activeBtn.netuno {
+        background-color: var(--neptune);
+        border-color: var(--neptune) !important;
+}

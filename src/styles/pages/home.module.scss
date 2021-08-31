@@ -1,0 +1,176 @@
+.homeContainer {
+    width: 100%;
+    height: 100vh;
+    div {
+        animation: start .7s forwards;
+        position: relative;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    div a {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        border-radius: 100%;
+        transition: .2s;
+        border: 2px solid var(--color-primary-800) ;
+
+
+        &:nth-child(1) { // Sol
+            width: 5rem;
+            height: 5rem;
+            background: url(/images/sun.png) center / cover;
+        }
+
+        &:nth-child(2) { // Mercúrio
+            max-width: 7rem;
+            max-height: 7rem;
+
+            &:hover {
+                border: 2px solid var(--mercury);
+            }
+            z-index: 8;
+            animation: spin infinite  linear 4s;
+
+            img {
+                width:10px !important;
+            }
+        }
+
+        &:nth-child(3) { // Vênus
+            max-width: 9.5rem;
+            max-height: 9.5rem;
+
+            &:hover {
+                border: 2px solid var(--venus);
+            }
+            z-index: 7;
+            animation: spin infinite  linear 10s;
+
+            img {
+                width:15px !important;
+            }
+        }
+
+        &:nth-child(4) { // Terra
+            max-width: 13rem;
+            max-height: 13rem;
+
+            &:hover {
+                border: 2px solid var(--earth);
+            }
+            z-index: 6;
+            animation: spin infinite  linear 15s;
+
+            img {
+                width:17px !important;
+            }
+        }
+
+        &:nth-child(5) { // Marte
+            max-width: 16.5rem;
+            max-height: 16.5rem;
+
+            &:hover {
+                border: 2px solid var(--mars);
+            }
+            z-index: 5;
+            animation: spin infinite  linear 30s;
+
+           
+            img {
+                width: 15px !important;
+            }
+        }
+
+        &:nth-child(6) { // Juṕiter
+            max-width: 22rem;
+            max-height: 22rem;
+
+            &:hover {
+                border: 2px solid var(--jupiter);
+            }
+            z-index: 4;
+            animation: spin infinite  linear 200s;
+
+            img {
+                width: 40px !important;
+            }
+        }
+
+        &:nth-child(7) { // Saturno
+            max-width: 26rem;
+            max-height: 26rem;
+
+            &:hover {
+                border: 2px solid var(--saturn);
+            }
+            z-index: 3;
+            animation: spin infinite  linear 500s;
+
+            img {
+                width: 40px !important;
+            }
+        }
+
+        &:nth-child(8) { // Urano
+            max-width: 29rem;
+            max-height: 29rem;
+
+            &:hover {
+                border: 2px solid var(--uranus);
+            }
+            z-index: 2;
+            animation: spin infinite  linear 1500s;
+            img {
+                width: 10px !important;
+            }
+        }
+
+        &:nth-child(9) { // Netuno
+            max-width: 32rem;
+            max-height: 32rem;
+
+            &:hover {
+                border: 2px solid var(--neptune);
+            }
+            z-index: 1;
+            animation: spin infinite  linear 3000s;
+            img {
+                width: 15px !important;
+            }
+        }
+
+        img {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            transform: translateY(-50%);
+            width: 100%;
+        }
+
+
+    }
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(0deg);
+    }
+    from {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes start {
+    to {
+        opacity: 1;
+        transform: scale(1);
+    } from {
+        opacity: 0;
+        transform: scale(.2);
+    }
+}

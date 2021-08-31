@@ -1,0 +1,214 @@
+.planetContent {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 5%;
+    .hero {
+        
+        .heroContent {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 5rem;
+            margin: 2rem 0;
+            
+            img {
+                max-width: 350px;
+                animation: left .2s forwards;
+            }
+
+            .geologylPlanet {
+                position: relative;
+
+                img:last-child {
+                    position: absolute;
+                    bottom: 2rem;
+                    left: 0;
+                    max-width: 100px;
+                }
+            }
+    
+            .content {
+                animation: rigth .2s forwards;
+                width: 100%;
+                max-width: 350px;
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start ;
+                gap: 1.5rem;
+    
+                h1 {
+                    text-transform: uppercase;
+                    font-size: 5rem;
+                    line-height: 5rem;
+                }
+    
+                p {
+                    color: var(--color-gray);
+                    font-size: .9rem;
+                    line-height: calc( .9rem * 1.5);
+                }
+    
+                .fontWiki {
+                    color: var(--color-gray);
+                    display: flex;
+    
+                    a {
+                        margin-left: 1rem;
+                        color: var(--color-primary-50);
+                        font-weight: 600;
+                        display: flex;
+                        align-items: center;
+                        gap: .3rem;
+                    }
+                }
+
+                .btnsPlanets {
+                    width: 100%;
+                    
+                    button {
+                        letter-spacing: 2.6px;
+                        width: 100%;
+                        padding: .7rem;
+                        font-size: .8rem;
+                        font-weight: 600;
+                        display: flex;
+                        align-items: center;
+                        gap: 1rem;
+                        border: 2px solid var(--color-primary-100);
+                        transition: .2s;
+                        text-transform: uppercase;
+                        cursor: pointer;
+
+                        & + button {
+                            margin-top: 1rem;
+                        }
+                    }
+                }
+            }
+        }
+
+        .aboutPlanet {
+            margin-bottom: 2rem;
+            display: grid;
+            grid-template-columns: repeat(4 1fr);
+            gap: 2rem;
+
+            div {
+                display: flex;
+                flex-direction: column;
+                border: 1px solid var(--color-gray);
+                padding: 1rem;
+
+                span {
+                        color: var(--color-gray);
+                        text-transform: uppercase;
+                        font-size: .675rem;
+                        font-weight: 700;
+                }
+
+                h1 {
+                        color: var(--color-gray);
+                        text-transform: uppercase;
+                        font-size: 2.5rem;
+                        font-weight: 600;
+                }
+                &:nth-child(1) {
+                    grid-column:  1 / 2;
+                }
+
+                &:nth-child(2) {
+                    grid-column:  2 / 3;
+                }
+
+                &:nth-child(3) {
+                    grid-column:  3 / 4;
+                }
+
+                &:nth-child(4) {
+                    grid-column:  4 / 5;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 975px) {
+    .hero {
+        .aboutPlanet {
+            grid-template-columns: repeat(2 1fr);
+            grid-template-rows: repeat(2 1fr);
+
+            div {
+                &:nth-child(1) {
+                    grid-column: 1 / 2;
+                }
+    
+                &:nth-child(2) {
+                    grid-column: 2 / 3 !important; 
+                    // grid-row: / 3;
+                }
+    
+                &:nth-child(3) {
+                    grid-column: 1  !important;
+                    grid-row: 3 / 4;
+                }
+    
+                &:nth-child(4) {
+                    grid-column: 2 / 3 !important; 
+                    grid-row: 3 / 4;
+                }
+            }
+        }
+    }
+
+}
+
+@media ( max-width: 800px ) {
+    .hero {
+        .heroContent {
+            flex-direction: column;
+        }
+
+        .aboutPlanet {
+            grid-template-columns:1fr;
+            grid-template-rows: repeat(4 1fr);
+
+            div {
+                &:nth-child(1) {
+                    grid-column: 1 / 2;
+                }
+    
+                &:nth-child(2) {
+                    grid-column: 1 / 2 !important; 
+                    grid-row: 2 / 3;
+                }
+    
+                &:nth-child(3) {
+                    grid-column: 1  !important;
+                    grid-row: 3 / 4;
+                }
+    
+                &:nth-child(4) {
+                    grid-column: 1 !important;
+                    grid-row: 4 / 5;
+                }
+            }
+        }
+    }
+}
+
+@keyframes left {
+    to {
+        transform: translateX(0px) rotate(0deg);
+    } from {
+        transform: translateX(-100px) rotate(-180deg);
+    }
+}
+
+@keyframes rigth {
+    to {
+        transform: translateX(0px);
+    } from {
+        transform: translateX(100px);
+    }
+}
