@@ -23,105 +23,101 @@ export default function Planetas({planet}) {
             <Header  />
             <main className={styles.planetContent}>
                 <div className={styles.hero}>
-                    { planet && (
-                        <>
-                        <Head>
-                            <title>
-                                {planet.name.toUpperCase()}
-                            </title>
-                            <link rel="shortcut icon" href={planet.image} type="image/x-icon" />
-                        </Head>
-                            <div className={styles.heroContent}>
+                    <Head>
+                        <title>
+                            {planet.name.toUpperCase()}
+                        </title>
+                        <link rel="shortcut icon" href={planet.image} type="image/x-icon" />
+                    </Head>
+                        <div className={styles.heroContent}>
 
-                                {
-                                    overview && (<Image width={350} height={350} src={planet.image} alt={`Imagem da ${namePlanet}`} />)
-                                }
+                            {
+                                overview && (<Image width={350} height={350} src={planet.image} alt={`Imagem da ${namePlanet}`} />)
+                            }
 
-                                {
-                                    internalPlanet && (<Image  width={350} height={350} src={planet.imageInternal} alt={`Imagem da ${namePlanet}`} />)
-                                }
+                            {
+                                internalPlanet && (<Image  width={350} height={350} src={planet.imageInternal} alt={`Imagem da ${namePlanet}`} />)
+                            }
 
-                                {
-                                    geologylPlanet && (
-                                        <div className={styles.geologylPlanet}>
-                                            <Image  width={350} height={350} src={planet.image} alt={`Imagem da ${namePlanet}`} />
-                                            <Image width={350} height={350} src={planet.imageGeology} alt={`Imagem da ${namePlanet}`} />
-                                        </div>
-                                        )
-                                }
+                            {
+                                geologylPlanet && (
+                                    <div className={styles.geologylPlanet}>
+                                        <Image  width={350} height={350} src={planet.image} alt={`Imagem da ${namePlanet}`} />
+                                        <Image width={350} height={350} src={planet.imageGeology} alt={`Imagem da ${namePlanet}`} />
+                                    </div>
+                                    )
+                            }
 
-                                <div className={styles.content}>
-                                    <h1>
-                                        {planet.name}
-                                    </h1>
+                            <div className={styles.content}>
+                                <h1>
+                                    {planet.name}
+                                </h1>
 
-                                    <p>
-                                        {planet.description}
-                                    </p>
+                                <p>
+                                    {planet.description}
+                                </p>
 
-                                    <span className={styles.fontWiki}>
-                                        Source:  
-                                        <a href={planet.font} target="_blank" rel="noopener noreferrer">
-                                            Wikipedia <BiLinkExternal />    
-                                        </a>
-                                    </span>
-                                <div className={styles.btnsPlanets}>
-                                    <button 
-                                        className={overview ? `activeBtn ${planet.slug}` : planet.slug}
-                                        onClick={() => {
-                                            setOverview(true)
-                                            setInternalPlanet(false)
-                                            setGeologyPlanet(false)
-                                        }}
-                                    >
-                                        <span>01</span>visão global
-                                    </button>
+                                <span className={styles.fontWiki}>
+                                    Source:  
+                                    <a href={planet.font} target="_blank" rel="noopener noreferrer">
+                                        Wikipedia <BiLinkExternal />    
+                                    </a>
+                                </span>
+                            <div className={styles.btnsPlanets}>
+                                <button 
+                                    className={overview ? `activeBtn ${planet.slug}` : planet.slug}
+                                    onClick={() => {
+                                        setOverview(true)
+                                        setInternalPlanet(false)
+                                        setGeologyPlanet(false)
+                                    }}
+                                >
+                                    <span>01</span>visão global
+                                </button>
 
-                                    <button 
-                                        className={internalPlanet ? `activeBtn ${planet.slug}` : planet.slug}
-                                        onClick={() => {
-                                            setOverview(false)
-                                            setInternalPlanet(true)
-                                            setGeologyPlanet(false)
-                                        }}
-                                    >
-                                        <span>02</span>estrutura interna
-                                    </button>
+                                <button 
+                                    className={internalPlanet ? `activeBtn ${planet.slug}` : planet.slug}
+                                    onClick={() => {
+                                        setOverview(false)
+                                        setInternalPlanet(true)
+                                        setGeologyPlanet(false)
+                                    }}
+                                >
+                                    <span>02</span>estrutura interna
+                                </button>
 
-                                    <button 
-                                        className={geologylPlanet ? `activeBtn ${planet.slug}` : planet.slug}
-                                        onClick={() => {
-                                            setOverview(false)
-                                            setInternalPlanet(false)
-                                            setGeologyPlanet(true)
-                                        }}
-                                    >
-                                        <span>03</span>geologia de superfície
-                                    </button>
-                                </div>
-                                </div>
+                                <button 
+                                    className={geologylPlanet ? `activeBtn ${planet.slug}` : planet.slug}
+                                    onClick={() => {
+                                        setOverview(false)
+                                        setInternalPlanet(false)
+                                        setGeologyPlanet(true)
+                                    }}
+                                >
+                                    <span>03</span>geologia de superfície
+                                </button>
                             </div>
-                            <div className={styles.aboutPlanet}>
-                                <div>
-                                    <span>Tempo de rotaão</span>
-                                    <h1>{planet.rotationTime}</h1>
-                                </div>
-                                <div>
-                                    <span>Rotação em torno do sol</span>
-                                    <h1>{planet.revolutionTime}</h1>
-                                </div>
-                                <div>
-                                    <span>Raio</span>
-                                    <h1>{planet.radius}</h1>
-                                </div>
-
-                                <div>
-                                    <span>Temperatura média</span>
-                                    <h1>{planet.averageTemp}</h1>
-                                </div>
                             </div>
-                        </>
-                    )}
+                        </div>
+                        <div className={styles.aboutPlanet}>
+                            <div>
+                                <span>Tempo de rotaão</span>
+                                <h1>{planet.rotationTime}</h1>
+                            </div>
+                            <div>
+                                <span>Rotação em torno do sol</span>
+                                <h1>{planet.revolutionTime}</h1>
+                            </div>
+                            <div>
+                                <span>Raio</span>
+                                <h1>{planet.radius}</h1>
+                            </div>
+
+                            <div>
+                                <span>Temperatura média</span>
+                                <h1>{planet.averageTemp}</h1>
+                            </div>
+                        </div>
                 </div>
             </main>
         </>
@@ -131,27 +127,26 @@ export default function Planetas({planet}) {
 export const getStaticPaths = async () => {
     return {
         paths: [{
-            params: { slug : 'mercurio'}
+            params: { slug: 'mercurio'}
         }, { 
-            params: { slug : 'venus'}
+            params: { slug: 'venus'}
         }, {
-            params: { slug : 'terra'}
+            params: { slug: 'terra'}
         },{
-            params: { slug :  'jupiter'}
+            params: { slug:  'jupiter'}
         }, {
-            params: { slug : 'saturno'}
+            params: { slug: 'saturno'}
         }, {
-            params: { slug : 'urano'}
+            params: { slug: 'urano'}
         }, {
-            params: { slug : 'netuno'}
+            params: { slug: 'netuno'}
         }],
-        fallback: true
+        fallback: false
     }
 }
 
-export const getStaticProps = async (ctx) => {
-    const { slug } = ctx.params
-    const data = await fetch(`http://localhost:3000/api/planets/${slug}`)
+export const getStaticProps = async ({ params }) => {
+    const data = await fetch(`http://localhost:3000/api/planets/${params.slug}`)
     const dataJson = await data.json()
 
 
