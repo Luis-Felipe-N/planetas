@@ -12,7 +12,7 @@
             margin: 2rem 0;
             
             img {
-                max-width: 350px;
+                max-width: 350px !important;
                 animation: left .2s forwards;
             }
 
@@ -23,7 +23,7 @@
                     position: absolute;
                     bottom: 2rem;
                     left: 0;
-                    max-width: 100px;
+                    width: 100px;
                 }
             }
     

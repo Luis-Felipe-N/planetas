@@ -1,30 +1,21 @@
 import { Header } from "../../components/Header";
-import { useRouter } from 'next/router'
-import Head from 'next/head'
-import Image from 'next/image'
-import styles from '../../styles/pages/planets.module.scss'
+import { useRouter } from 'next/router';
+import Head from 'next/head';
+import Image from 'next/image';
+
 
 import { useEffect, useState } from "react";
 
-import {BiLinkExternal} from 'react-icons/bi'
+import {BiLinkExternal} from 'react-icons/bi';
+import { GetStaticPaths } from "next";
+import styles from './planets.module.scss'
 
-export default function Planetas() {
-    const [ planet, setPlanet ] = useState()
+export default function Planetas({planet}) {
     const [ overview, setOverview ] = useState(true)
     const [ internalPlanet, setInternalPlanet ] = useState(false)
     const [ geologylPlanet, setGeologyPlanet ] = useState(false)
     const router = useRouter()
     const namePlanet = router.query.slug
-
-    useEffect(() => {
-        const getData = async () => {
-            const data = await fetch(`http://localhost:3000/api/planets/${namePlanet}`)
-            const dataJson = await data.json()
-            setPlanet(dataJson)
-        }
-        console.log('redenrizou')
-        getData()
-    }, [namePlanet])
 
 
     return (
@@ -135,4 +126,39 @@ export default function Planetas() {
             </main>
         </>
     )
+}
+
+export const getStaticPaths = async () => {
+    return {
+        paths: [{
+            params: { slug : 'mercurio'}
+        }, { 
+            params: { slug : 'venus'}
+        }, {
+            params: { slug : 'terra'}
+        },{
+            params: { slug :  'jupiter'}
+        }, {
+            params: { slug : 'saturno'}
+        }, {
+            params: { slug : 'urano'}
+        }, {
+            params: { slug : 'netuno'}
+        }],
+        fallback: true
+    }
+}
+
+export const getStaticProps = async (ctx) => {
+    const { slug } = ctx.params
+    const data = await fetch(`http://localhost:3000/api/planets/${slug}`)
+    const dataJson = await data.json()
+
+
+    return {
+        props: {
+            planet: dataJson
+        },
+        revalidate: 60 * 60 * 24 * 30 // 30 dias 
+    }
 }
