@@ -1,12 +1,18 @@
 import Link from 'next/link'
-import { useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import styles from './styles.module.scss'
 
 // import Link from 'next/link'
 
 export function Header() {
     const [ openMenu, setOpenMenu ] = useState(false)
+    const menuRef = useRef()
 
+    function handleCloseMenu (e) {
+        setOpenMenu(false)
+    }
+
+ 
     return (
         <header className={styles.header}>
         
@@ -14,7 +20,7 @@ export function Header() {
                     <h1>Planetas</h1>
                 </Link>
                 <nav className={openMenu ? styles.active : ''}>
-                    <ul>
+                    <ul onClick={handleCloseMenu} ref={menuRef} >
                         <li>
                             <Link href="/planetas/mercurio">
                                 <a className="mercurioLink">
