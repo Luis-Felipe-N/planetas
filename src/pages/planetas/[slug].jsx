@@ -158,8 +158,8 @@ export default function Planetas() {
                             {
                                 geologylPlanet && (
                                     <div className={styles.geologylPlanet}>
-                                        <Image  width={350} height={350} src={planet.image} alt={`Imagem da ${namePlanet}`} />
-                                        <Image width={350} height={350} src={planet.imageGeology} alt={`Imagem da ${namePlanet}`} />
+                                        <Image   width={350} height={350} src={planet.image} alt={`Imagem da ${namePlanet}`} />
+                                        <img className={styles.internalPlanet} width={350} height={350} src={planet.imageGeology} alt={`Imagem da ${namePlanet}`} />
                                     </div>
                                     )
                             }
@@ -208,6 +208,7 @@ export default function Planetas() {
                                         setOverview(false)
                                         setInternalPlanet(false)
                                         setGeologyPlanet(true)
+                                        console.log('teste')
                                     }}
                                 >
                                     <span>03</span>geologia de superfície

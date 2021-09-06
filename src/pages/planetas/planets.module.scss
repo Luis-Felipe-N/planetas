@@ -19,10 +19,17 @@
             .geologylPlanet {
                 position: relative;
 
-                img:last-child {
+
+                // img:first-child {
+                //     max-width: 350px !important;
+                //     animation: left .2s forwards;
+                // }
+
+                .internalPlanet {
                     position: absolute;
                     bottom: 2rem;
                     left: 0;
+                    height: 100px;
                     width: 100px;
                 }
             }
