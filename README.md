@@ -18,7 +18,7 @@ Fiz esse site para aprender mais sobre keyframes e de quebra, aprender um pouco 
 
 <p align="center">
  <a href="#Tecnologias">Tecnologias</a> •
- <a href="#Primeiros-passos">Getting started</a> •
+ <a href="#Primeiros-passos">Primeiros passos</a> •
  <a href="#autor">Autor</a>
 </p>
 
