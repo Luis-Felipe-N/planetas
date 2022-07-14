@@ -31,7 +31,7 @@ Fiz esse site para aprender mais sobre keyframes e de quebra, aprender um pouco 
 
 Esse projeto foi desenvolido com as seguintes tecnologias:
 
-- JavaScript
+- NextJs
 - SCSS
 
 
